@@ -1,0 +1,59 @@
+<app-header></app-header>
+
+<div class="container-fluid mt-2">
+<h2 style="margin-top: 30px; color: black; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">NEW ACCOUNT</h2>
+<p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: justify; color:black;">This is dummy content: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur quaerat repudiandae beatae sapiente consectetur dignissimos maxime, temporibus illum ut numquam sit, veritatis unde consequatur non qui asperiores delectus assumenda accusantium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat earum illum suscipit, vitae possimus dignissimos voluptatem error quos, itaque, magnam laudantium hic repellat provident minus perspiciatis? Illum blanditiis aut reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, pariatur autem magni quam veniam itaque et harum sunt ea magnam tenetur sequi distinctio maxime expedita aspernatur culpa neque earum dolorem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maxime libero dicta obcaecati architecto. Praesentium eaque sequi, voluptate quibusdam rem, dolores numquam ullam est, hic error autem veritatis magni facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea a voluptate non inventore esse molestias animi totam. Dolores, aliquam aliquid iste veritatis dignissimos facere recusandae earum magnam consectetur nulla nisi.</p>
+
+<div class="row mt-3 mb-3">
+<div class="col-5 mt-5 text-center">
+    <img style="width: 350px;" src="https://hionline.in/wp-content/uploads/2017/11/woman_icon.png" alt="register image">
+    <br>
+    <button routerLink="/" class="btn btn-success mt -2">Back</button>
+
+</div>
+<div  class="col-6 border-2 ">
+
+    <form (ngSubmit)="register()" [formGroup]="registerForm" class=" border p-5 mt-3 m -5 " >
+        <div class="form-floating mb-3">
+            <input name="uname" formControlName="uname" type="text" class="form-control" id="floatingInput" placeholder="User Name">
+            <label for="floatingInput">User Name</label>
+          </div>
+         
+          <!-- invalid  uname -->
+          <div *ngIf="this.registerForm.get('uname')?.errors&& this.registerForm.get('uname')?.touched" class="text-danger mb-2" >Invalid user Name </div>
+          
+          <div class="form-floating mb-2">
+            <input name="acno" formControlName="acno" type="text" class="form-control" id="floatingInput" placeholder="accountnumber">
+            <label for="floatingInput">Account Number</label>
+          </div>
+         
+          <!-- invalid acno -->
+          <div *ngIf="this.registerForm.get('acno')?.errors&& this.registerForm.get('acno')?.touched" class="text-danger mb-2" >Invalid Account Number </div>
+          <div class="form-floating mb-2">
+
+            <div class="form-floating mb-3">
+                <input name="pswd" formControlName="pswd" type="password" class="form-control" id="floatingpassword" placeholder="Password ">
+                <label for="floatingpssword">password</label>
+              </div>
+             <!-- invalid pswd -->
+              <div *ngIf="this.registerForm.get('pswd')?.errors&& this.registerForm.get('pswd')?.touched" class="text-danger mb-2" >Invalid password </div>
+          <div class="form-floating mb-2">
+
+            
+          
+          <div class="mt-3">
+            <button type="submit" class="btn btn-primary">
+                Register
+            </button>
+            &nbsp;
+            <p >
+                Already a User? Click Here to <a routerLink="/">Login</a>
+            </p>
+           </div>
+          </div>
+        </div>
+      </form>
+</div>
+</div>
+
+</div>

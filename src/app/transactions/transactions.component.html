@@ -1,0 +1,53 @@
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+            <a class="navbar-brand" routerLink="/dashboard">
+             <img src="https://www.pngrepo.com/png/158158/180/online-banking.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-center">
+            &nbsp;
+             <span style="color: black;  font-family: 'Alegreya Sans SC', sans-serif;">BANK IN TOUCH</span>
+            </a>
+    </div>
+</nav>
+
+
+  <!-- transactopn body -->
+  <div class="container-fluid mt-2">
+    <h1 class="text-dark" style="margin-top: 10px;" >Transactions</h1>
+    <p style="text-align: justify; font-family: 'Times New Roman', Times, serif;">This is Dummy data: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos eligendi ad a, totam laboriosam culpa ipsam eos sequi illo sapiente perferendis necessitatibus nesciunt ex dolor facilis, molestias dolorem quisquam incidunt! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa magni possimus unde, maxime incidunt aliquid. Quaerat natus vero ducimus ipsam dolorum incidunt, porro eum facere eveniet possimus! Nam, sed quibusdam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut voluptates sunt non voluptas id aspernatur? Rem nobis quas recusandae? Id iste atque, odit quia enim expedita consequatur tempore rem? Nostrum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel vero eligendi necessitatibus aut nihil maxime doloribus? Quaerat explicabo rem similique at. Voluptas consequuntur, sequi beatae recusandae ullam nemo eos sint.
+    </p>
+    <div class="container border-1 p-3 mt-5" style="background-color: rgba(193, 135, 240, 0.523) ;">
+        <div class="row">
+            <div class="col-lg-4">
+                <h3 class="text-primary">Transaction History</h3>
+            </div>
+            <div class="col-lg-4">
+                <label for="search">Search By:  </label>&nbsp;
+                <input (keyup)="search($event)" type="text" placeholder="Transaction type">
+            </div>
+            <div class="col-lg-4" style="margin-left:800px; margin-top: -40px;">
+                <input (click)="generatePDF()" value="Export" type="text" class="btn btn-primary">
+            </div>
+        </div>
+        <!-- table -->
+        <table class="table border mt-3 text-center">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Transactions type</th>
+                    <th>From Account</th>
+                    <th>To Account</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transaction of allTransactions | filter: searchKey:'type' ; let i = index" >
+                    <th>{{i+1}}</th>
+                    <th>{{transaction.type}}</th>
+                    <th>{{transaction.fromAcno}}</th>
+                    <th>{{transaction.toAcno}}</th>
+                    <th>{{transaction.amount}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>

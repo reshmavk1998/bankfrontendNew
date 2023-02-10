@@ -1,0 +1,54 @@
+
+<!-- header -->
+<app-header></app-header>
+
+<!-- login page -->
+
+  <div  class="row mt-2 " >
+     <div class="col-7 mt-1 ">
+        
+ <!-- image -->
+ <img  style="margin-left: -35px;" class="mt-5  "   height="450px"  src="https://cdni.iconscout.com/illustration/premium/thumb/online-banking-3817567-3181516.png" 
+alt="login image">
+</div>
+<div class ="col-5 mt-5 border-4" >
+    <form (ngSubmit)="login()" [formGroup]="loginForm" class=" border p-5 mt-5 me-5 " >
+        <div class="form-floating mb-3">
+            <input name="acno" formControlName="acno" type="text" class="form-control" id="floatingInput" placeholder="Account number">
+            <label for="floatingInput">Account Number</label>
+          </div>
+         
+          <!-- invalid acno -->
+          <div *ngIf="this.loginForm.get('acno')?.errors&& this.loginForm.get('acno')?.touched" class="text-danger mb-2" >Invalid Account Number </div>
+          
+          <div class="form-floating mb-2">
+            <input name="pswd" formControlName="pswd" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+         
+          <!-- invalid pswd -->
+          <div *ngIf="this.loginForm.get('pswd')?.errors&& this.loginForm.get('pswd')?.touched" class="text-danger mb-2" >Invalid password </div>
+          <div class="form-floating mb-2">
+          
+     <!-- error Msg -->
+     <div class="text-danger">{{errorMsg}}</div>
+
+
+          <div class="mt-3">
+            <button type="submit" class="btn fs-5  btn-primary">
+                Login  &nbsp;
+                <span *ngIf="successMsg" class="spinner-border fs-5 text-light" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </span>
+             </button>
+            
+             &nbsp;
+            <p class="mt-4">
+                New User? Click Here to <a routerLink="/register">register</a>
+            </p>
+           </div>
+        
+        </div>
+      </form>
+   
+</div>

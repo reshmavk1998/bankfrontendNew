@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,900&family=Lora:ital@1&family=Moon+Dance&family=Open+Sans&family=Roboto+Condensed&family=Rubik+Storm&family=Solway:wght@500&display=swap');
+
+
+body{
+      
+    font-family: 'Solway', serif;
+    overflow-x: hidden;
+    background-image: url('https://images.freecreatives.com/wp-content/uploads/2015/04/lavender-paper-texture.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  
+}
+
+
